@@ -18,8 +18,8 @@ xtrain,xtest,ytrain,ytest=train_test_split(X,Y, train_size=1/3,random_state=0)
 
 """ model regressiion"""
 from sklearn.linear_model import LinearRegression
-regressor=LinearRegression()
-regressor.fit(xtrain,ytrain)
+regressor=LinearRegression().fit(xtrain,ytrain)
+#regressor.fit(xtrain,ytrain)
 
 
 """ drawing predicted value used by regressor"""
