@@ -15,14 +15,14 @@ Y=dataset.iloc[:,-1].values
 from sklearn.linear_model import LinearRegression
 
 linear=LinearRegression()
-linear.fit(X,Y)
+#linear.fit(X,Y)
 
 """Polynomial start from here"""
-from sklearn.preprocessing import PolynomialFeatures
-polynomial = PolynomialFeatures(degree=7) #"""We need to convert single matrix to multi Dinmension matrix Due to polynomial Powers"""
-X_Poly = polynomial.fit_transform(X)
-linear2=LinearRegression()
-linear2.fit(X_Poly,Y)
+# from sklearn.preprocessing import PolynomialFeatures
+# polynomial = PolynomialFeatures(degree=7) #"""We need to convert single matrix to multi Dinmension matrix Due to polynomial Powers"""
+# X_Poly = polynomial.fit_transform(X)
+# linear2=LinearRegression()
+# linear2.fit(X_Poly,Y)
 
 """Visulaising each regression """
 
@@ -45,14 +45,23 @@ linear2.fit(X_Poly,Y)
 
 """Visualizing smoother curve"""
 
-np_grid=np.arange(min(X),max(X),0.1)
-np_grid=np_grid.reshape(len(np_grid),1)
-pt.scatter(X,Y,color="blue")
-pt.plot(np_grid,linear2.predict(polynomial.fit_transform( np_grid)),color="red")
-pt.title("for smoother curve")
-pt.xlabel("exp")
-pt.ylabel("salary")
-pt.show()
+# np_grid=np.arange(min(X),max(X),0.1)
+# np_grid=np_grid.reshape(len(np_grid),1)
+# pt.scatter(X,Y,color="blue")
+# pt.plot(np_grid,linear2.predict(polynomial.fit_transform( np_grid)),color="red")
+# pt.title("for smoother curve")
+# pt.xlabel("exp")
+# pt.ylabel("salary")
+# pt.show()
+
+
+print(dataset.shape)
+print(dataset.head())
+print(dataset.info())
+print("*******")
+print(dataset.isnull())
+print("$$$$$$$")
+print(dataset.Salary.value_counts())
 
 
 
