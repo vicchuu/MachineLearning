@@ -43,9 +43,53 @@ print(b.info()) # info , info() is different
 print(b_dt.isnull().sum()) #0 represents all values filled (NA , _  not there)
 
 """if we need to count value based on output For ex : 0 ,1 if its in OP then,"""
-
+"""Group value based in labeled column"""
 print(b_dt.value_counts("age"))
 
+"""Group value based on mean"""
+print(b_dt.groupby("age").mean())
+
+"""Group value based on median value"""
+print(b_dt.groupby("age").median())
 
 
+"""We can see statistical value in pandas"""
+print(b_dt.count( ))
 
+"""We can see mean value by  each column wise"""
+
+print(b_dt.mean())
+
+
+"""checking std deviation """
+print(b_dt.std())
+
+"""printing min and max value"""
+
+print(b_dt.min())
+print(b_dt.max())
+
+
+"""describing all statistical value"""
+
+print(b_dt.describe())
+
+
+"""adding a column in data set"""
+#b_dt["newColumn"]=boston_dataset.target new column and target shld have same length
+
+"""removing a row"""
+print(b_dt.head())
+b_dt.drop(index=0,axis=1,inplace=True) # axis 0 is row, 1 is column ,index means row will removed (first row removed)
+b_dt.drop(columns="age",axis=1,inplace=True)
+print(b_dt.head())
+
+
+"""specifing each row"""
+print(b_dt.iloc[2]) # second row
+
+print(b_dt.iloc[:,2]) #  seond colums fully
+
+"""we can correlate every column field """
+
+print(b_dt.corr().to_csv("predictedCorrelation.csv"))
