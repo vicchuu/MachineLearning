@@ -28,7 +28,7 @@ print(type(NParr))
 
 
 """Shape"""
-print(NParr.shape , NParr.size)
+print(NParr.shape , NParr.size) # size result will be in m*n
 
 a=np.array([(1,2,3),(9,8)],dtype="object") # if we give diff length , we need to mention dtype
 
@@ -102,10 +102,10 @@ print(np.multiply(c1,c2))
 
 """We can transpose matrix """
 q1=[[(1,2,3),(9,8,7)]]
-print(np.transpose(q1))
-print(np.asarray(q1).T)
+#print(np.transpose(q1))
+#print(np.asarray(q1).T)
 
 """We can reshape an array""" #2*3 = 3*2
 
-print(np.asarray(q1).reshape(3,2))
+print(np.asarray(q1).reshape(len(q1[:]),len(q1)))
 
